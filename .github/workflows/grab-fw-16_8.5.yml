@@ -76,7 +76,7 @@ jobs:
         run: |
           tar -cvzf ./out/odin_SM-S921U_XAA.tar.gz ./out/odin/SM-S921U_XAA/
           tar -cvzf ./out/odin_SM-S711U1_AIO.tar.gz ./out/odin/SM-S711U1_AIO/
-          tar -cvzf ./out/odin_SM-A525_EUX.gz ./out/odin/SM-A525_EUX/
+          tar -cvzf ./out/odin_SM-A525F_EUX.gz ./out/odin/SM-A525F_EUX/
 
       - name: Extract firmwares
         run: |
@@ -88,7 +88,7 @@ jobs:
         run: |
           tar -cvzf ./out/fw_SM-S921U_XAA.tar.gz ./out/fw/SM-S921U_XAA/
           tar -cvzf ./out/fw_SM-S711U1_AIO.tar.gz ./out/fw/SM-S711U1_AIO/
-          tar -cvzf ./out/fw_SM-A525_EUX.gz ./out/fw/SM-A525_EUX/
+          tar -cvzf ./out/fw_SM-A525F_EUX.gz ./out/fw/SM-A525F_EUX/
           
 
       - name: Uploading  Tarballs to SourceForge
