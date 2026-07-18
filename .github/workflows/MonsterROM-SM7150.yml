@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v7
         with:
-          repository: mehedihjoy0/MONSTER-ROM-SM7150
+          repository: mehedihjoy0/MonsterROM-SM7150
           ref: sixteenQPR2
           submodules: 'recursive'
 
