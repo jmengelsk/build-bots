@@ -74,9 +74,9 @@ jobs:
 
       - name: Create odin Tarballs
         run: |
-          tar -cvzf ./out/odin_SM-S921U_XAA.tar.gz ./out/odin/SM-S921U_XAA/
-          tar -cvzf ./out/odin_SM-S711U1_AIO.tar.gz ./out/odin/SM-S711U1_AIO/
-          tar -cvzf ./out/odin_SM-A525F_EUX.tar.gz ./out/odin/SM-A525F_EUX/
+          tar -cvzf ./out/odin_SM-SM-S901E_TUR_S901EXXSEGZE3.tar.gz ./out/odin/SM-S901E_TUR/
+          tar -cvzf ./out/odin_SM-S711U1_AIO_S711U1UEU7FZE2.tar.gz ./out/odin/SM-S711U1_AIO/
+          tar -cvzf ./out/odin_SM-A525F_EUX_A525FXXSCFYF1.tar.gz ./out/odin/SM-A525F_EUX/
 
       - name: Extract firmwares
         run: |
@@ -86,9 +86,9 @@ jobs:
 
       - name: Create fw Tarballs
         run: |
-          tar -cvzf ./out/fw_SM-S921U_XAA.tar.gz ./out/fw/SM-S921U_XAA/
-          tar -cvzf ./out/fw_SM-S711U1_AIO.tar.gz ./out/fw/SM-S711U1_AIO/
-          tar -cvzf ./out/fw_SM-A525F_EUX.tar.gz ./out/fw/SM-A525F_EUX/
+          tar -cvzf ./out/fw_SM-SM-S901E_TUR_S901EXXSEGZE3.tar.gz ./out/fw/SM-S901E_TUR/
+          tar -cvzf ./out/fw_SM-S711U1_AIO_S711U1UEU7FZE2.tar.gz ./out/fw/SM-S711U1_AIO/
+          tar -cvzf ./out/fw_SM-A525F_EUX_A525FXXSCFYF1.tar.gz ./out/fw/SM-A525F_EUX/
           
 
       - name: Uploading  Tarballs to SourceForge
