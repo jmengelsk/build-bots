@@ -80,7 +80,8 @@ jobs:
 
       - name: Create Tarballs
         run: |
-          source ./buildenv.sh m51
+          tar -cvzf ./out/fw_8501.tar.gz ./out/fw/.
+          tar -cvzf ./out/odin_8501.tar.gz ./out/odin/.
           
 
       - name: Uploading  Build to SourceForge
