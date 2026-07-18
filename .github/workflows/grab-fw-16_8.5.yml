@@ -80,8 +80,9 @@ jobs:
 
       - name: Create Tarballs
         run: |
-          tar -cvzf ./out/fw_8501.tar.gz ./out/fw/.
-          tar -cvzf ./out/odin_8501.tar.gz ./out/odin/.
+          tar -cvzf ./out/SM-S921U_XAA.tar.gz ./out/fw/SM-S921U_XAA/
+          tar -cvzf ./out/SM-S711U1_AIO.tar.gz ./out/fw/SM-S711U1_AIO/
+          tar -cvzf ./out/SM-A525_EUX.gz ./out/fw/SM-A525_EUX/
           
 
       - name: Uploading  Build to SourceForge
