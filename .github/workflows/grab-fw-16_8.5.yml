@@ -86,10 +86,10 @@ jobs:
 
       - name: Uploading  Build to SourceForge
         env:
-          SF_UN1CA_SM7150_NIGHTLY: ${{ secrets.SF_UN1CA_SM7150_NIGHTLY }}
+          SF_LAB_DIR: ${{ secrets.SF_LAB_DIR }}
           
         run: |
           for ROM in out/UN1CA*.zip; do
             echo "Uploading $ROM to SourceForge..."
-            scp -i ~/.ssh/id_rsa $ROM $SF_UN1CA_SM7150_NIGHTLY           
+            scp -i ~/.ssh/id_rsa $ROM $SF_LAB_DIR           
           done
