@@ -1,4 +1,4 @@
-name: Build MONSTER-ROM-SM7150
+name: Build MonsterROM-SM7150
 
 on:
   schedule:
