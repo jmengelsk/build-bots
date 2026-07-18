@@ -1,6 +1,8 @@
 name: Build UN1CA-SM7150
 
 on:
+  schedule:
+    - cron: '30 8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -91,10 +93,10 @@ jobs:
 
       - name: Uploading  Build to SourceForge
         env:
-          SF_UN1CA_SM7150_PATH: ${{ secrets.SF_UN1CA_SM7150_PATH }}
+          SF_UN1CA_SM7150_NIGHTLY: ${{ secrets.SF_UN1CA_SM7150_NIGHTLY }}
           
         run: |
           for ROM in out/UN1CA*.zip; do
             echo "Uploading $ROM to SourceForge..."
-            scp -i ~/.ssh/id_rsa $ROM $SF_UN1CA_SM7150_PATH           
+            scp -i ~/.ssh/id_rsa $ROM $SF_UN1CA_SM7150_NIGHTLY           
           done
