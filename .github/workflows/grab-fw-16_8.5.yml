@@ -67,30 +67,35 @@ jobs:
           source ./buildenv.sh m51
           ./scripts/build_dependencies.sh
 
-      - name: Download stock firmwares
+      - name: Download firmwares
         run: |
           source ./buildenv.sh m51
           ./scripts/download_fw.sh
+      - name: Create odin Tarballs
+        run: |
+          tar -cvzf ./out/odin_SM-S921U_XAA.tar.gz ./out/odin/SM-S921U_XAA/
+          tar -cvzf ./out/odin_SM-S711U1_AIO.tar.gz ./out/odin/SM-S711U1_AIO/
+          tar -cvzf ./out/odin_SM-A525_EUX.gz ./out/odin/SM-A525_EUX/
 
-      - name: Extract stock firmwares
+      - name: Extract firmwares
         run: |
           source ./buildenv.sh m51
           ./scripts/extract_fw.sh
 
 
-      - name: Create Tarballs
+      - name: Create fw Tarballs
         run: |
-          tar -cvzf ./out/SM-S921U_XAA.tar.gz ./out/fw/SM-S921U_XAA/
-          tar -cvzf ./out/SM-S711U1_AIO.tar.gz ./out/fw/SM-S711U1_AIO/
-          tar -cvzf ./out/SM-A525_EUX.gz ./out/fw/SM-A525_EUX/
+          tar -cvzf ./out/fw_SM-S921U_XAA.tar.gz ./out/fw/SM-S921U_XAA/
+          tar -cvzf ./out/fw_SM-S711U1_AIO.tar.gz ./out/fw/SM-S711U1_AIO/
+          tar -cvzf ./out/fw_SM-A525_EUX.gz ./out/fw/SM-A525_EUX/
           
 
-      - name: Uploading  Build to SourceForge
+      - name: Uploading  Tarballs to SourceForge
         env:
           SF_LAB_DIR: ${{ secrets.SF_LAB_DIR }}
           
         run: |
-          for ROM in out/*.gz; do
-            echo "Uploading $ROM to SourceForge..."
-            scp -i ~/.ssh/id_rsa $ROM $SF_LAB_DIR/           
+          for BALL in out/*.gz; do
+            echo "Uploading $BALL to SourceForge..."
+            scp -i ~/.ssh/id_rsa $BALL $SF_LAB_DIR/           
           done
