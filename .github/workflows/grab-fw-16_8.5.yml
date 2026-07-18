@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: mehedihjoy0/UN1CA-SM7150
-          ref: sixteen
+          ref: sixteen-8.5
           submodules: 'recursive'
 
       - name: Integrating SSH Keys f. SF
@@ -89,7 +89,7 @@ jobs:
           SF_LAB_DIR: ${{ secrets.SF_LAB_DIR }}
           
         run: |
-          for ROM in out/UN1CA*.zip; do
+          for ROM in out/*.gz; do
             echo "Uploading $ROM to SourceForge..."
-            scp -i ~/.ssh/id_rsa $ROM $SF_LAB_DIR           
+            scp -i ~/.ssh/id_rsa $ROM $SF_LAB_DIR/           
           done
